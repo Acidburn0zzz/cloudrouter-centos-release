@@ -115,7 +115,7 @@ sed -i s/"^distroverpkg=.*$"/"distroverpkg=%{name}"/ /etc/yum.conf
 %dir /etc/yum.repos.d
 %config(noreplace) /etc/yum.repos.d/%{cr_name}.repo
 %config(noreplace) /etc/yum.repos.d/%{base_display_name}-Base.repo
-%config(noreplace) /etc/yum.repos.d/%{CentOS}-Sources.repo
+%config(noreplace) /etc/yum.repos.d/%{base_display_name}-Sources.repo
 %config(noreplace) %attr(0644,root,root) /etc/issue
 %config(noreplace) %attr(0644,root,root) /etc/issue.net
 %attr(0644,root,root) %{_rpmconfigdir}/macros.d/macros.dist
