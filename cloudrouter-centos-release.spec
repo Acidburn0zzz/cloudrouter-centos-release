@@ -14,7 +14,7 @@
 Summary:	%{cr_display_name} release files
 Name:		%{cr_name}-%{base_name}-release
 Version:	%{cr_version}
-Release:	3
+Release:	4
 License:	AGPLv3
 Group:		System Environment/Base
 Source:		%{name}-%{version}.tar.gz
@@ -27,6 +27,7 @@ Provides:   cloudrouter-release
 BuildArch:	noarch
 Conflicts:	%{base_name}-release
 Conflicts:	cloudrouter-release-%{base_name}
+Requires:	epel-release
 
 %description
 %{cr_display_name} release files such as yum configs and various /etc/ files that
@@ -129,8 +130,11 @@ sed -i s/"^distroverpkg=.*$"/"distroverpkg=%{name}"/ /etc/yum.conf
 %doc README.%{cr_display_name}-Release-Notes
 
 %changelog
+* Tue Sep 01 2015 John Siegrist <john@complects.com> - 2-4
+- Added dependency on epel-release so the CloudRouter dependencies in EPEL7 are accessible.
+
 * Thu Aug 27 2015 John Siegrist <john@complects.com> - 2-3
-- Added support for virtual package "cloudrouter-repo".
+- Added support for virtual package "cloudrouter-release".
 
 * Fri Aug 14 2015 John Siegrist <john@complects.com> - 2-2
 - Fixed GPG key verification for RPMs downloaded from the CloudRouter repository.
