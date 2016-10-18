@@ -15,11 +15,11 @@
 Summary:	%{cr_display_name} release files
 Name:		%{cr_name}-%{base_name}-release
 Version:	%{cr_version}
-Release:	1
+Release:	2
 License:	AGPLv3
+Group:		System Environment/Base
 Source0:    GNU-AGPL-3.0.txt
 Source1:    %{cr_readme}
-Source2:    %{cr_readme}
 
 Group:		System Environment/Base
 Obsoletes:	redhat-release
@@ -31,7 +31,6 @@ Provides:   cloudrouter-release
 BuildArch:	noarch
 Conflicts:	%{base_name}-release
 Requires:   cloudrouter-repo
-Requires:   cloudrouter-test-repo
 Requires:   centos-repo
 Requires:   epel-release
 
@@ -131,6 +130,9 @@ sed -i s/"^distroverpkg=.*$"/"distroverpkg=%{name}"/ /etc/yum.conf
 
 
 %changelog
+* Tue Oct 18 2016 John Siegrist <john@complects.com> - 4-2
+- Removed test-repo as dependency in preparation for GA of CRv4
+
 * Mon Oct 10 2016 John Siegrist <john@complects.com> - 4-1
 - Updated version for CRv4
 
